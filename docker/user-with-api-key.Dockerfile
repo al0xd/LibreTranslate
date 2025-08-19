@@ -40,7 +40,19 @@ RUN <<EOF
   chown -R libretranslate:libretranslate /home/libretranslate/.local
 EOF
 
+# Railway khởi chạy dưới user "libretranslate"
+USER root
+
+# Tạo thư mục lưu data
+RUN mkdir -p /app/db \
+    && chown -R libretranslate:libretranslate /app/db
+
+# Khai báo volume để Railway mount vào đây
+VOLUME ["/app/db"]
+
+# Chuyển lại user để chạy app
 USER libretranslate
+
 
 COPY --from=builder --chown=1032:1032 /app /app
 WORKDIR /app
