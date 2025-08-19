@@ -42,17 +42,5 @@ RUN if [ "$with_models" = "true" ]; then  \
   fi \
   fi
 
-
-# ---------- BỔ SUNG CÀI NGÔN NGỮ ----------
-RUN ./venv/bin/pip install argostranslate \
-  && ./venv/bin/argos-translate-cli install translate-en_vi \
-  && ./venv/bin/argos-translate-cli install translate-en_fr \
-  && ./venv/bin/argos-translate-cli install translate-en_es \
-  && ./venv/bin/argos-translate-cli install translate-en_zh
-# -----------------------------------------
-
-
-
-
 EXPOSE 5000
 ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "*" ]
