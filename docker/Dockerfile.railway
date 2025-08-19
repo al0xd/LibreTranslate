@@ -5,32 +5,32 @@ FROM libretranslate/libretranslate:latest
 # Các ngôn ngữ được cài: 
 # - Tiếng Trung giản thể (zh), Nhật (ja), Hàn (ko), Pháp (fr), Đức (de), 
 #   Tây Ban Nha (es), Bồ Đào Nha (pt), Ý (it), Nga (ru), Ả Rập (ar), Việt Nam (vi)
-RUN libretranslate --update-models && \
-    libretranslate --install-model en zh && \
-    libretranslate --install-model zh en && \
-    libretranslate --install-model en ja && \
-    libretranslate --install-model ja en && \
-    libretranslate --install-model en ko && \
-    libretranslate --install-model ko en && \
-    libretranslate --install-model en fr && \
-    libretranslate --install-model fr en && \
-    libretranslate --install-model en de && \
-    libretranslate --install-model de en && \
-    libretranslate --install-model en es && \
-    libretranslate --install-model es en && \
-    libretranslate --install-model en pt && \
-    libretranslate --install-model pt en && \
-    libretranslate --install-model en it && \
-    libretranslate --install-model it en && \
-    libretranslate --install-model en ru && \
-    libretranslate --install-model ru en && \
-    libretranslate --install-model en ar && \
-    libretranslate --install-model ar en && \
-    libretranslate --install-model en vi && \
-    libretranslate --install-model vi en
+RUN ./venv/bin/libretranslate --update-models && \
+    ./venv/bin/libretranslate --install-model en zh && \
+    ./venv/bin/libretranslate --install-model zh en && \
+    ./venv/bin/libretranslate --install-model en ja && \
+    ./venv/bin/libretranslate --install-model ja en && \
+    ./venv/bin/libretranslate --install-model en ko && \
+    ./venv/bin/libretranslate --install-model ko en && \
+    ./venv/bin/libretranslate --install-model en fr && \
+    ./venv/bin/libretranslate --install-model fr en && \
+    ./venv/bin/libretranslate --install-model en de && \
+    ./venv/bin/libretranslate --install-model de en && \
+    ./venv/bin/libretranslate --install-model en es && \
+    ./venv/bin/libretranslate --install-model es en && \
+    ./venv/bin/libretranslate --install-model en pt && \
+    ./venv/bin/libretranslate --install-model pt en && \
+    ./venv/bin/libretranslate --install-model en it && \
+    ./venv/bin/libretranslate --install-model it en && \
+    ./venv/bin/libretranslate --install-model en ru && \
+    ./venv/bin/libretranslate --install-model ru en && \
+    ./venv/bin/libretranslate --install-model en ar && \
+    ./venv/bin/libretranslate --install-model ar en && \
+    ./venv/bin/libretranslate --install-model en vi && \
+    ./venv/bin/libretranslate --install-model vi en
 
 # Expose port mặc định
 EXPOSE 5000
 
 # Lệnh chạy server
-CMD ["libretranslate", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["./venv/bin/libretranslate", "--host", "0.0.0.0", "--port", "5000"]
