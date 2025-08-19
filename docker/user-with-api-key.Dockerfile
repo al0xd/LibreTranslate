@@ -47,6 +47,10 @@ USER root
 RUN mkdir -p /app/db \
     && chown -R libretranslate:libretranslate /app/db
 
+# Tạo thư mục lưu sessions
+RUN mkdir -p db/sessions \
+    && chown -R libretranslate:libretranslate db/sessions
+
 # Chuyển lại user để chạy app
 USER libretranslate
 
