@@ -47,9 +47,6 @@ USER root
 RUN mkdir -p /app/db \
     && chown -R libretranslate:libretranslate /app/db
 
-# Khai báo volume để Railway mount vào đây
-VOLUME ["/app/db"]
-
 # Chuyển lại user để chạy app
 USER libretranslate
 
