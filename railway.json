@@ -1,6 +1,6 @@
 {
   "build": {
     "builder": "DOCKERFILE",
-    "dockerfilePath": "./docker/docker/user-with-api-key.Dockerfile"
+    "dockerfilePath": "./docker/user-with-api-key.Dockerfile"
   }
 }
